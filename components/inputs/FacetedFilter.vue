@@ -64,7 +64,7 @@ defineProps({
         v-if="item.color"
         size="sm"
         :label="item.label"
-        color="red"
+        :color="item.color"
         :variant="'subtle'"
       />
       <div

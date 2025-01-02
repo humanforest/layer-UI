@@ -73,3 +73,24 @@ const { t } = useI18n();
     </div>
   </div>
 </template>
+
+<i18n lang="json">{
+  "en-GB": {
+    "topbar": {
+      "closeSidebar": "Close Sidebar",
+      "openSidebar": "Open Sidebar",
+      "reload": "Reload",
+      "toggleColorMode": "Toggle Color Mode",
+      "changeLanguage": "Change Language"
+    }
+  },
+  "es-ES": {
+    "topbar": {
+      "closeSidebar": "Cerrar Sidebar",
+      "openSidebar": "Abrir Sidebar",
+      "reload": "Recargar",
+      "toggleColorMode": "Cambiar modo de color",
+      "changeLanguage": "Cambiar idioma"
+    }
+  }
+}</i18n>

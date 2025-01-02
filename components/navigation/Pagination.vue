@@ -14,7 +14,12 @@ const props = defineProps({
     required: true,
   },
 });
+const page3 = ref(2)
 const items = ref(["10", "25", "50", "100"]);
+const perPageString = computed({
+  get: () => perPage.value.toString(),
+  set: (val: string) => perPage.value = parseInt(val, 10)
+});
 const pageTo = computed(() =>
   Math.min(page.value * perPage.value, props.totalItems ?? 0)
 );
@@ -28,6 +33,7 @@ const pageFrom = computed(() =>
     <div class="flex items-center gap-1.5">
       <span class="text-sm leading-5">Rows per page:</span>
       <USelect
+        v-model="perPageString"
         :items="items"
         class="w-20"
       />
@@ -45,11 +51,11 @@ const pageFrom = computed(() =>
         <span class="font-medium">{{ props.totalItems }}</span>
         results
       </span>
+
       <UPagination
         v-model:page="page"
-        :items-per-page="totalItems"
-        :total="100"
-        :max="5"
+        :items-per-page="perPage"
+        :total="props.totalItems"
         first-icon="i-tabler-chevrons-left"
         prev-icon="i-tabler-chevron-left"
         next-icon="i-tabler-chevron-right"
