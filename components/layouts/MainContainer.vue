@@ -7,9 +7,7 @@ defineProps({
 })
 </script>
 <template>
-  <UContainer :ui="{
-    padding: 'pt-6 pb-20 sm:pb-10 lg:pt-10',
-  }">
+  <UContainer class="pt-6 pb-20 sm:pb-10 lg:pt-10">
     <div
       v-if="$slots.header || $slots.subtitle || $slots.actions"
       class="flex gap-4"

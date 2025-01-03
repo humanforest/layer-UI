@@ -59,8 +59,16 @@ export default defineAppConfig({
     tooltip: {
       popper: { strategy: 'fixed' },
     },
+    dropdownMenu: {
+      slots: {
+        content: 'max-w-max min-w-max bg-red-500'
+      },
+    },
     selectMenu: {
       width: 'max-w-max min-w-max',
+      slots: {
+        content: 'max-w-max min-w-max'
+      },
       default: {
         selectedIcon: 'i-tabler-circle-check-filled',
       },
