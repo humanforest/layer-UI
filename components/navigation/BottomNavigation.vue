@@ -9,7 +9,7 @@ const props = defineProps({
 });
 const cols = computed(
   () =>
-    `grid-cols-${props.links
+    `${props.links
       .map((link) => (link.hide ? 0 : 1))
       .reduce((a: 0 | 1, b: 0 | 1) => (a + b) as 0 | 1, 0 as 0 | 1)}`
 );
@@ -22,9 +22,12 @@ const cols = computed(
     >
       <div
         class="mx-auto grid h-full content-stretch divide-x divide-gray-200 font-medium dark:divide-gray-700"
-        :class="cols"
+        :class="`grid-cols-${cols}`"
       >
-        <template v-for="(link, index) of links" :key="index">
+        <template
+          v-for="(link, index) of links"
+          :key="index"
+        >
           <ULink
             v-if="!link.hide"
             square
@@ -35,7 +38,11 @@ const cols = computed(
             class="flex flex-col items-center justify-center text-sm text-gray-500"
             @click="link.click"
           >
-            <UIcon v-if="link.icon" :name="link.icon" class="size-6 shrink-0" />
+            <UIcon
+              v-if="link.icon"
+              :name="link.icon"
+              class="size-6 shrink-0"
+            />
             {{ link.mobileLabel ?? link.label }}
           </ULink>
         </template>
