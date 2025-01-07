@@ -140,7 +140,7 @@ export default defineAppConfig({
     },
     dropdownMenu: {
       slots: {
-        content: "max-w-max min-w-max",
+        itemTrailing: "gap-4",
       },
     },
     selectMenu: {
