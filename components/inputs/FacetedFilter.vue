@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 type SelectMenuItem = {
   id: string;
   label: string;
@@ -13,7 +12,7 @@ type AcceptableValue = {
   label: string;
 };
 
-const model = ref<(boolean | SelectMenuItem | AcceptableValue)[]>([])
+const model = ref<(boolean | SelectMenuItem | AcceptableValue)[]>([]);
 
 defineProps({
   options: {
@@ -22,7 +21,7 @@ defineProps({
   },
   label: {
     type: String,
-    default: 'Items',
+    default: "Items",
   },
   selectLabel: {
     type: String,
@@ -34,7 +33,7 @@ defineProps({
   },
   allLabel: {
     type: String,
-    default: 'All',
+    default: "All",
   },
   searchable: {
     type: Boolean,
@@ -42,9 +41,9 @@ defineProps({
   },
   searchablePlaceholder: {
     type: String,
-    default: 'Search...',
+    default: "Search...",
   },
-})
+});
 </script>
 
 <template>
@@ -59,7 +58,7 @@ defineProps({
     leading-icon="i-tabler-circle-plus"
     :content="{ side: 'bottom', align: 'start' }"
   >
-    <template #item="{ item, value }">
+    <template #item="{ item }">
       <UBadge
         v-if="item.color"
         size="sm"
@@ -68,22 +67,11 @@ defineProps({
         :variant="'subtle'"
       />
 
-      <div
-        v-else-if="item.avatar"
-        class="flex items-center gap-1"
-      >
-        <UAvatar
-          :src="item.avatar"
-          :alt="item.label"
-          size="2xs"
-          class="mr-2"
-        />
+      <div v-else-if="item.avatar" class="flex items-center gap-1">
+        <UAvatar :src="item.avatar" :alt="item.label" size="2xs" class="mr-2" />
         <span class="truncate">{{ item.label }}</span>
       </div>
-      <span
-        v-else
-        class="truncate"
-      >{{ item.label }}</span>
+      <span v-else class="truncate">{{ item.label }}</span>
     </template>
   </USelectMenu>
 </template>
