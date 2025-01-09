@@ -3,10 +3,7 @@
     class="relative flex w-full h-full flex-1 flex-col overflow-hidden border-r border-gray-200 bg-white dark:border-gray-700 dark:bg-gray-900"
   >
     <div class="flex min-h-0 grow flex-col gap-y-2">
-      <div
-        v-if="$slots.header"
-        class="flex w-full flex-col p-4"
-      >
+      <div v-if="$slots.header" class="flex w-full flex-col">
         <slot name="header" />
       </div>
 

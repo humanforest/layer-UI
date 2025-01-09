@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { TooltipProvider } from 'reka-ui';
+import { TooltipProvider } from "reka-ui";
 useHead({
   bodyAttrs: {
-    class: 'bg-gray-50 dark:bg-gray-950',
+    class: "bg-gray-50 dark:bg-gray-950",
   },
-}); 
+});
 </script>
 <template>
   <UApp>
-    <NuxtLayout>
+    <NuxtLayout name="custom">
       <TooltipProvider>
         <div>
           <NuxtLoadingIndicator :throttle="0" />
@@ -20,7 +20,7 @@ useHead({
 </template>
 <style>
 html {
-  font-family: 'GT Haptik', sans-serif;
+  font-family: "GT Haptik", sans-serif;
 }
 
 /* Color Mode transition */
