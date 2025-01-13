@@ -10,18 +10,26 @@ const mobileSidebarOpen = useState("mobileSidebarOpen");
 
 const { t } = useI18n();
 
-const items = [
-  {
-    label: "Home",
-    to: "index",
-  },
-  {
-    label: route.name.charAt(0).toUpperCase() + route.name.slice(1),
-    to: route.path,
-  },
-];
-
-console.log("route", route.name);
+const items = reactive(
+  ref([
+    {
+      label: "Home",
+      to: "index",
+    },
+    {
+      label: `${route.name.charAt(0).toUpperCase()}${route.name.slice(1)} `,
+      to: route.path,
+    },
+  ])
+);
+watch(
+  () => route.path,
+  (path) => {
+    items.value[1].label = `${route.name
+      .charAt(0)
+      .toUpperCase()}${route.name.slice(1)} `;
+  }
+);
 </script>
 
 <template>

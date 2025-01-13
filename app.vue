@@ -8,7 +8,7 @@ useHead({
 </script>
 <template>
   <UApp>
-    <NuxtLayout name="custom">
+    <NuxtLayout>
       <TooltipProvider>
         <div>
           <NuxtLoadingIndicator :throttle="0" />
