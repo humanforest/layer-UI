@@ -1,13 +1,12 @@
 <script setup lang="ts">
 import type { NavigationLink } from "../../types/ui";
 
-const props = defineProps({
+defineProps({
   links: {
     type: Array as PropType<NavigationLink[]>,
     default: () => [],
   },
 });
-console.log(props.links);
 </script>
 
 <template>

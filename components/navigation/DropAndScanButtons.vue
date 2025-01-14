@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // emite event when press Scan button
-defineEmits(["scan-bike"]);
+defineEmits(["scan-bike", "open-collect"]);
 const props = defineProps({
   collectedBikes: {
     type: Array as PropType<unknown[]>,
@@ -17,10 +17,12 @@ const props = defineProps({
       <UButton
         label="Drop off"
         icon="i-tabler-truck"
-        class="min-w-[172px] min-h-10 flex justify-center items-start text-black disabled:bg-[var(--ui-bg-inverted)] bg-[var(--ui-bg-inverted)]"
+        color="neutral"
+        class="min-w-[172px] min-h-10 flex justify-center items-start text-black"
         size="xl"
         :ui="{ label: 'text-black' }"
-        :disabled="true"
+        :disabled="collectedBikes.length > 0 ? false : true"
+        @click="$emit('open-collect')"
       >
         <template #trailing>
           <UBadge
