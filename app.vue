@@ -7,7 +7,7 @@ useHead({
 });
 </script>
 <template>
-  <UApp>
+  <div>
     <NuxtLayout>
       <TooltipProvider>
         <div>
@@ -16,7 +16,7 @@ useHead({
         </div>
       </TooltipProvider>
     </NuxtLayout>
-  </UApp>
+  </div>
 </template>
 <style>
 html {

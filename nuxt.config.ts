@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   components: [{ path: "./components", prefix: "", pathPrefix: false }],
   devtools: { enabled: true },
   modules: ["@nuxt/ui"],
-  css: ["~/assets/css/main.css"],
+  css: ["./assets/css/main.css"],
   ui: {
     icons: ["tabler"],
     theme: {
