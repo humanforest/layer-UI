@@ -34,7 +34,7 @@ watch(
 
 <template>
   <div
-    class="sticky w-full top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white/75 px-4 backdrop-blur sm:gap-x-6 sm:px-6 lg:px-8 dark:border-gray-700 dark:bg-[var(--ui-bg)]/75"
+    class="sticky w-full top-0 z-40 flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 bg-white/75 px-4 backdrop-blur sm:gap-x-6 sm:px-6 lg:px-8 dark:border-[var(--ui-border)] dark:bg-[var(--ui-bg)]"
   >
     <div
       class="flex w-full items-center justify-between gap-x-4 sm:justify-normal lg:gap-x-6"
@@ -69,11 +69,11 @@ watch(
           />
         </UTooltip>
         <div>
-          <UBreadcrumb :items="items">
-            <template #separator>
-              <span class="mx-2 text-[var(--ui-text-muted)]">/</span>
-            </template>
-          </UBreadcrumb>
+          <div class="flex items-center gap-2">
+            <div class="text-green-500">
+              {{ route.name.charAt(0).toUpperCase() + route.name.slice(1) }}
+            </div>
+          </div>
         </div>
       </div>
 

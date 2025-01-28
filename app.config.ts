@@ -25,19 +25,12 @@ export default defineAppConfig({
       gray: "gray",
       amber: "amber",
       slate: "slate",
+      neutral: "neutral",
     },
     navigationMenu: {
       slots: {
         root: "relative !min-h-[auto] !min-w-[auto]",
       },
-      compoundVariants: [
-        {
-          active: true,
-          class: {
-            link: "before:bg-[var(--ui-primary)] text-white font-bold",
-          },
-        },
-      ],
     },
     link: {
       base: "focus-visible:outline-[var(--ui-scondary)]",
