@@ -10,6 +10,12 @@ const mobileSidebarOpen = useState("mobileSidebarOpen");
 
 const { t } = useI18n();
 
+const routeLastName = computed(() => {
+  const nameParts = route.name.toString().split("-");
+  const lastName = nameParts.pop() || "";
+  return lastName.charAt(0).toUpperCase() + lastName.slice(1);
+});
+
 const items = reactive(
   ref([
     {
@@ -17,17 +23,16 @@ const items = reactive(
       to: "index",
     },
     {
-      label: `${route.name.charAt(0).toUpperCase()}${route.name.slice(1)} `,
+      label: routeLastName.value,
       to: route.path,
     },
   ])
 );
+
 watch(
   () => route.path,
-  (path) => {
-    items.value[1].label = `${route.name
-      .charAt(0)
-      .toUpperCase()}${route.name.slice(1)} `;
+  () => {
+    items.value[1].label = routeLastName.value;
   }
 );
 </script>
@@ -70,8 +75,8 @@ watch(
         </UTooltip>
         <div>
           <div class="flex items-center gap-2">
-            <div class="text-green-500">
-              {{ route.name.charAt(0).toUpperCase() + route.name.slice(1) }}
+            <div class="text-[var(--prose-text)]">
+              {{ routeLastName }}
             </div>
           </div>
         </div>
