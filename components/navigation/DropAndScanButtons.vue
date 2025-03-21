@@ -20,13 +20,12 @@ defineProps({
       class="flex gap-2 justify-center md:justify-end items-start w-full px-4 md:px-0"
     >
       <UButton
-        label="Drop off"
+        label="Drop off list"
         icon="i-tabler-truck"
         color="neutral"
         variant="solid"
         class="w-full md:w-[129px] justify-center min-h-10 md:min-h-auto md:h-9.5"
         size="md"
-        :disabled="collectedBikes.length > 0 ? false : true"
         @click="$emit('open-collect')"
       >
         <template #trailing>
